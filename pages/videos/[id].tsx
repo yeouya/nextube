@@ -76,7 +76,7 @@ export const getStaticPaths: GetStaticPaths<VideoParams> = async () => {
     `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=KR&maxResults=20&key=${process.env.NEXT_PUBLIC_API_KEY}`,
   );
   const { items }: VideoData = await response.json();
-  const paths = items.map(({ id }) => ({ params: { id } }));
+  const paths = items?.map(({ id }) => ({ params: { id } }));
 
   return {
     paths,
