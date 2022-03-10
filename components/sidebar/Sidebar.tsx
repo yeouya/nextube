@@ -4,7 +4,7 @@ export default function Sidebar({ videos }: any) {
   return (
     <>
       <aside>
-        {videos.map((video) => (
+        {videos.map((video: any) => (
           <Video key={video.id} video={video} />
         ))}
       </aside>
